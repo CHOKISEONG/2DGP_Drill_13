@@ -10,9 +10,10 @@ class Ball:
         if Ball.image == None:
             Ball.image = load_image('ball21x21.png')
         self.x, self.y= randrange(0, common.court.w), randrange(0, common.court.h)
-        print(common.court.w)
+        self.boy_x, self.boy_y = common.boy.x, common.boy.y
+
     def draw(self):
-        self.image.draw(self.x, self.y)
+        self.image.clip_draw(0,0,23,23,self.x- common.court.window_left, self.y - common.court.window_bottom)
 
     def update(self):
         pass
