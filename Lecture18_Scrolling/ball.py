@@ -16,7 +16,8 @@ class Ball:
         self.image.clip_draw(0,0,23,23,self.x- common.court.window_left, self.y - common.court.window_bottom)
 
     def update(self):
-        pass
+        if common.boy.x - 10 <= self.x <= common.boy.x + 10 and common.boy.y - 10 <= self.y <= common.boy.y + 10:
+            game_world.remove_object(self)
 
     def handle_collision(self, group, other):
         pass
